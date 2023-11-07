@@ -27,7 +27,6 @@
               <div class="card-body">
                 <img :src="element.img.url" :alt="element.img.name" class="rounded" />
               </div>
-              
             </div>
           </div>
         </div>
@@ -189,6 +188,8 @@ onMounted(() => {
     }
   });
 });
+
+
 </script>
 
 <style scoped>
@@ -286,7 +287,7 @@ main {
 }
 
 .card {
- 
+  height: 140px;
   cursor: pointer;
   position: relative;
   transform-style: preserve-3d;
@@ -295,10 +296,9 @@ main {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.card-body {
-  width: 140px;
+.card-body { 
   height: 140px;
- 
+  width: 140px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -4,7 +4,8 @@ const imageSchema = new mongoose.Schema({
   name: String,
   data: Buffer,
   contentType: String,
-  url: String, // Ajoutez un champ pour l'URL
+  url: String,
+  description:String
 });
 
 const Image = mongoose.model('Image', imageSchema);

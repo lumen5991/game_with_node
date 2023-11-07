@@ -11,15 +11,16 @@ const uploadImage = async (req, res) => {
         return res.status(400).json({ error: 'Erreur lors du téléchargement de l\'image' });
       }
       const { originalname, buffer, mimetype } = req.file;
-    
+      const { description } = req.body; 
 
-      const url = `${baseUrl}/uploads/${originalname}`; // Générez l'URL complet
+      const url = `${baseUrl}/uploads/${originalname}`; 
 
       const newImage = new Image({
         name: originalname,
         data: buffer,
         contentType: mimetype,
-        url: url, // Enregistrez l'URL complet
+        url: url, 
+        description: description, 
       });
 
       const savedImage = await newImage.save();
