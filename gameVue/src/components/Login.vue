@@ -27,10 +27,10 @@
   </div>
 </template>
 
-<script setup>
-import axios from 'axios';
+<script setup lang="ts">
+
 import { ref } from 'vue';
-import { clientHttp } from "../libs/clientHttp";
+import  clientHttp from "@/libs/clientHttp";
 import { useRouter } from 'vue-router';
 
 const email = ref('');
@@ -65,8 +65,9 @@ const login = async () => {
 
    
     successMessage.value = "Connexion réussie ! Redirection vers la page /game...";
+    error.value = ''; 
   } 
-  catch (error) {
+  catch (err) {
     console.error(error);
     error.value = "Adresse e-mail, mot de passe ou code de vérification incorrect.";
   }
